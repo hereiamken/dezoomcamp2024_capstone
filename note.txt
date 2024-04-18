@@ -1,0 +1,20 @@
+Dim tables:
+- Matches
+- Dates (ngày tháng)
+- Teams 
+- Player 
+- Stadiums
+- Goals
+
+Fact tables:
+- Fact_goals
+- Fact_matches
+- Fact teams
+
+Goals:
+- Top 10 goal soccers.
+- Top 10 assists.
+- Top 5 winning rate teams.
+- Analyze method goals by left, right foot, penaties or head.
+- Top players soccer by left, right, penaty, head.
+- Top 5 atttenfance stadium rate.

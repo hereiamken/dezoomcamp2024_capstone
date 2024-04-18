@@ -1,0 +1,5 @@
+requests~=2.31.0
+pandas~=2.2.2
+pyarrow~=15.0.2
+google-cloud-storage~=2.16.0
+openpyxl~=3.1.2
