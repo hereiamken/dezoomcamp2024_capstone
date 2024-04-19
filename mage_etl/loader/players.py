@@ -17,7 +17,7 @@ def load_data_from_file(*args, **kwargs) -> DataFrame:
 
     Docs: https://docs.mage.ai/design/data-loading#fileio
     """
-    filepath = 'https://github.com/hereiamken/dezoomcamp2024_capstone/blob/main/data/players.csv'
+    filepath = 'https://github.com/hereiamken/dezoomcamp2024_capstone/blob/main/data/players.csv?raw=True'
 
     return pd.read_csv(filepath, on_bad_lines='skip')
 

@@ -1,4 +1,3 @@
-from mage_ai.io.file import FileIO
 import pandas as pd
 from pandas import DataFrame
 if 'data_loader' not in globals():
@@ -18,7 +17,7 @@ def load_data_from_file(*args, **kwargs) -> DataFrame:
 
     Docs: https://docs.mage.ai/design/data-loading#fileio
     """
-    filepath = 'https://github.com/hereiamken/dezoomcamp2024_capstone/blob/main/data/stadiums.csv'
+    filepath = 'https://github.com/hereiamken/dezoomcamp2024_capstone/blob/main/data/stadiums.csv?raw=True'
 
     return pd.read_csv(filepath, on_bad_lines='skip')
 

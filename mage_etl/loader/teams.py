@@ -17,11 +17,9 @@ def load_data_from_file(*args, **kwargs) -> DataFrame:
 
     Docs: https://docs.mage.ai/design/data-loading#fileio
     """
-    filepath = 'https://github.com/hereiamken/dezoomcamp2024_capstone/blob/main/data/teams.csv'
+    filepath = 'https://github.com/hereiamken/dezoomcamp2024_capstone/blob/main/data/teams.csv?raw=True'
 
-    df = pd.read_csv(filepath, on_bad_lines='skip')
-    print(df)
-    return df
+    return pd.read_csv(filepath, on_bad_lines='skip')
 
 
 @test
@@ -29,5 +27,4 @@ def test_output(output, *args) -> None:
     """
     Template code for testing the output of the block.
     """
-    print(output)
     assert output is not None, 'The output is undefined'
