@@ -4,7 +4,7 @@ with
     data as (
         select
             *
-        from {{ source("staging", "stg_matches") }}
+        from {{ source("staging", "stg_matches_partitoned_clustered") }}
     )
 select
     cast(match_id as string) as match_id,
