@@ -108,6 +108,9 @@ def get_data_from_excel_file(url: str, sheets=list[str]):
 def main():
     print("python main function")
     get_data_from_excel_file(init_path, sheets=sheets)
+    df = pd.read_csv("data/teams.csv", index_col=None)
+    print(df)
+    return df
 
 
 if __name__ == '__main__':

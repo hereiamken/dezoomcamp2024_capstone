@@ -1,0 +1,4 @@
+/keys
+**/.*.lock.hcl
+**/*.tfstate
+**/.terraform
