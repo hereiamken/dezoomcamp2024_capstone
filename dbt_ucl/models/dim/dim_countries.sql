@@ -18,9 +18,6 @@ with
         select *
         from managers
     ),
-    countries as (
-        select DISTINCT country
-        from countries_unioned
-    )
+    countries as (select distinct country from countries_unioned)
 select row_number() over () as country_id, country as country_name
 from countries
