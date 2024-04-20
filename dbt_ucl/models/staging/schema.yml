@@ -1,0 +1,114 @@
+version: 2
+sources:
+  - name: staging
+    database: 
+      dtc-de-course-412605
+    schema: 
+      dezoomcamp2024_capstone
+    tables:
+      # ["teams", "stadiums", "players", "managers", "matches", "goals"]
+      - name: stg_teams
+      - name: stg_stadiums
+      - name: stg_players
+      - name: stg_managers
+      - name: stg_goals
+      - name: stg_matches_partitoned_clustered
+
+models:
+  - name: staging_teams
+    description: Staging table teams
+    columns:
+      - name: team_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: team_name
+      - name: country
+      - name: home_stadium
+  
+  - name: staging_stadiums
+    description: Staging table stadiums
+    columns:
+      - name: stadium_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: name
+      - name: city
+      - name: country
+      - name: capacity
+
+  - name: staging_players
+    description: Staging table players
+    columns:
+      - name: player_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: first_name
+      - name: last_name
+      - name: full_name
+      - name: nationality
+      - name: dob
+      - name: team
+      - name: jersey_number
+      - name: position
+      - name: height
+      - name: weight
+      - name: foot
+
+  - name: staging_managers
+    description: Staging table managers
+    columns:
+      - name: manager_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: first_name
+      - name: last_name
+      - name: full_name
+      - name: nationality
+      - name: dob
+      - name: team
+
+  - name: staging_matches
+    description: Staging table matches
+    columns:
+      - name: match_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: season
+      - name: date_time
+      - name: home_team
+      - name: away_team
+      - name: stadium
+      - name: home_team_score
+      - name: away_team_score
+      - name: penalty_shoot_out
+      - name: attendance
+
+  - name: staging_goals
+    description: Staging table goals
+    columns:
+      - name: goal_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      - name: match_id
+      - name: pid
+      - name: duration
+      - name: assist
+      - name: goal_desc

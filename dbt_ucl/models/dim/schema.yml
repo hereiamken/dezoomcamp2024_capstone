@@ -1,0 +1,132 @@
+version: 2
+
+models:
+  - name: dim_countries
+    description: Dimension table of countries
+    columns:
+      - name: country_id
+        data_type: int64
+      - name: country_name
+        data_type: string
+
+  - name: dim_cities
+    description: Dimension table of cities
+    columns:
+      - name: city_id
+        data_type: int64
+      - name: city_name
+        data_type: string
+      - name: country_id
+        data_type: int64
+
+  - name: dim_teams
+    description: Dimension table of teams
+    columns:
+      - name: team_id
+        data_type: int64
+      - name: team_name
+        data_type: string
+      - name: country_id
+        data_type: int64
+      - name: home_stadium_id
+        data_type: int64
+
+  - name: dim_stadiums
+    description: Dimension table of stadiums
+    columns:
+      - name: stadium_id
+        data_type: int64
+      - name: name
+        data_type: string
+      - name: city_id
+        data_type: int64
+      - name: country_id
+        data_type: int64
+      - name: capacity
+        data_type: int64
+
+  - name: dim_players
+    description: Dimension table of players
+    columns:
+      - name: player_id
+        data_type: string
+      - name: first_name
+        data_type: string
+      - name: last_name
+        data_type: string
+      - name: full_name
+        data_type: string
+      - name: country_id
+        data_type: int64
+      - name: dob
+        data_type: date
+      - name: team_id
+        data_type: int64
+      - name: jersey_number
+        data_type: int64
+      - name: position
+        data_type: string
+      - name: height
+        data_type: int64
+      - name: weight
+        data_type: int64
+      - name: foot
+        data_type: string
+
+  - name: dim_managers
+    description: Dimension table of managers
+    columns:
+      - name: manager_id
+        data_type: int64
+      - name: first_name
+        data_type: string
+      - name: last_name
+        data_type: string
+      - name: full_name
+        data_type: string
+      - name: country_id
+        data_type: int64
+      - name: dob
+        data_type: date
+      - name: team_id
+        data_type: int64
+
+  - name: dim_matches
+    description: Dimension table of matches
+    columns:
+      - name: match_id
+        data_type: string
+      - name: season
+        data_type: string
+      - name: date_time
+        data_type: timestamp
+      - name: home_team_id
+        data_type: int64
+      - name: away_team_id
+        data_type: int64
+      - name: stadium_id
+        data_type: int64
+      - name: home_team_score
+        data_type: int64
+      - name: away_team_score
+        data_type: int64
+      - name: penalty_shoot_out
+        data_type: int64
+      - name: attendance
+        data_type: int64
+
+  - name: dim_goals
+    description: Dimension table of goals
+    columns:
+      - name: goal_id
+        data_type: string
+      - name: match_id
+        data_type: string
+      - name: pid
+        data_type: string
+      - name: duration
+        data_type: int64
+      - name: assist
+        data_type: string
+      - name: goal_desc
+        data_type: string
